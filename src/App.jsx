@@ -1,30 +1,30 @@
-import './App.css'
-import Input from './components/Input'
-import Task from './components/Task'
+import { Routes, Route } from "react-router-dom";
 
-function App() {
+import All from './routes/All';
+import Active from './routes/Active';
+import Complete from './routes/Complete';
+
+import Nav from "./components/Nav";
+
+const App = () => {
 
   return (
     <div className="App">
       <header>
         <h1>#todo</h1>
       </header>
+      
+      <Nav />
+
       <main>
-        <nav>
-          <a href="#">asd</a>
-          <a href="#">asd</a>
-          <a href="#">asd</a>
-        </nav>
-        <div className='container'>
-          <Input />
-          <Task />
-          <Task />
-          <Task />
-          <Task />
-        </div>
+        <Routes>
+          <Route path="/" element={<All />} />
+          <Route path="active" element={<Active />} />
+          <Route path="complete" element={<Complete />} />
+        </Routes>
       </main>
     </div>
   )
-}
+};
 
-export default App
+export default App;
