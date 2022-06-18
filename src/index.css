@@ -20,6 +20,21 @@ h1 {
 .App {
   text-align: center;
 }
+nav {
+  margin: 2rem 0 1.3rem 0;
+}
+nav a {
+  font-size: 0.875rem;
+  color: #333;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 2rem;
+  padding: 1rem;
+}
+.active {
+  border-bottom: 0.3125rem solid #2F80ED;
+  border-radius: 0.3125rem ;
+}
 .container {
   border-top: solid 1px #BDBDBD;
   width: 38rem;
@@ -42,7 +57,10 @@ input {
   border-radius: 0.75rem;
   padding: 1.25rem 2.5rem;
 }
-.task {
+.task ul {
+  padding: 0;
+}
+.task li{
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
@@ -51,8 +69,76 @@ input {
   margin: 1rem 0 0 0.5rem;
   color: #000;
   font-size: 1.125rem;
+  text-align: initial;
+}
+.task .line {
+  text-decoration: line-through;
 }
 .check {
   height: 1.5rem;
   width: 1.5rem;
+}
+.taskComplete {
+  justify-content: space-between;
+}
+.taskComplete div{
+  display: flex;
+}
+
+svg {
+  margin-top: 0.5rem;
+  color: #BDBDBD;
+}
+svg:hover {
+  color: #EB5757;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: end;
+  margin-top: 1rem;
+}
+.btnContainer button{
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.8rem 2rem;
+  background-color: #EB5757;
+  color: #FFF;
+}
+.btnContainer button:hover {
+  background-color: #db4848;
+}
+.btnContainer svg{
+  color: #fff;
+  margin: 0 0.3rem;
+}
+
+@media (max-width : 650px){
+  nav {
+    margin-bottom: 0.75rem;
+  }
+  nav a {
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  .container {
+    width: 21rem;
+  }
+  input {
+    margin-top: 1rem;
+    width: 17rem;
+    padding: 0.9rem;
+  }
+  .task p {
+    font-size: 0.875rem;
+  }
+
+  .btnAdd {
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+    padding: 0.785rem 2rem;
+  }
+  .btnContainer {
+    justify-content: center;
+  }
 }

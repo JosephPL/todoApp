@@ -1,16 +1,23 @@
-const Input = () => {
+import { useContext } from "react";
+import { useState } from "react";
+import { useRef } from "react";
+import { todoContext } from "../context/TodoProvider";
 
-    const handleAddTask = (target) => {
-        const inputValue = target.previousElementSibling.value;
-        console.log(inputValue)
+const Input = () => {
+    const { addTask } = useContext(todoContext);
+    const [ desc, setDesc ] = useState('')
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        addTask(desc)
+        setDesc('');
     };
 
     return (
-        <>
-            <input type='text'/>
-            <button type="button" className="btnAdd" onClick={e => handleAddTask(e.target)}>Add</button>
-        </>
-    
+        <form onSubmit={handleSubmit}>  
+            <input type='text' onChange={(e) => {setDesc(e.target.value)}} value={desc} autoComplete="off" required/>
+            <button type="submit" className="btnAdd">Add</button>
+        </form>
     )
 };
 
