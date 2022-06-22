@@ -8,7 +8,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://josephpl.github.io/todoApp">
+    <a href="https://react-ls-todo-app.herokuapp.com/">
       Demo
     </a>
     <span> | </span>

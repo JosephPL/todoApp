@@ -19,7 +19,7 @@ const App = () => {
       <TodoProvider >
         <main>
           <Routes>
-            <Route path="/" element={<All />} />
+            <Route path="/" index element={<All />} />
             <Route path="active" element={<Active />} />
             <Route path="complete" element={<Complete />} />
           </Routes>
